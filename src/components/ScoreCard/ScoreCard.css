@@ -9,32 +9,120 @@
   justify-content: center;
   padding: 2rem;
   font-family: "Chokokutai", system-ui;
+  color: #dddddd;
 }
 .score-card {
-  background-color: #ffff;
+background-color: transparent;
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(253, 246, 246, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin: 0 auto;
   font-family: "Chokokutai", system-ui;
-  max-width: 600px; 
+  max-width: 600px;
+  text-align: center;
 }
 
-.team-1, .team-2 {
+.team-1,
+.team-2 {
   display: flex;
   flex-direction: row;
- gap: 20px;
- justify-content: center;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+
+}
+
+button {
+  margin-top: 1rem;
+  border: none;
+  background-color: transparent;
+}
+
+button span {
+  font-size: small;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+}
+
+.separator {
+ font-size: 60px;
  align-items: center;
+ text-align: center;
+ color: #dddddd;
 }
 
 .flag {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #DDDDDD;
+  width: 140px;
+  height: 140px;
+  border: 1px solid #dddddd;
   border-radius: 50%;
 }
 
+.input input {
+  border: none;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.input input:hover {
+  transform: scale(1.1);
+  background-color:#dddddd ;
+  cursor: pointer;
+}
+
+.download-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+
+}
+
+.download-btn button {
+  background-color: #4285F4;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.download-btn button:hover {
+  background-color:#0a5bdd ;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+@media (max-width: 540px) {
+  .score-card {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .team-1, .team-2 {
+     display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-self: center;
+  }
+}

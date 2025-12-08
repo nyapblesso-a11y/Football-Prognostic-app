@@ -1,5 +1,6 @@
 import React from "react";
 import "./ScoreCard.css";
+import { FaDownload } from "react-icons/fa";
 function ScoreCard() {
   return (
     <>
@@ -8,18 +9,33 @@ function ScoreCard() {
       </div>
       <div className="score-card">
         <div className="team-1">
-          <div className="flag"></div>
+          <div className="team-name">
+            <div className="flag"></div>
+            <button>
+              <span>Select team</span>
+            </button>
+          </div>
           <div className="input">
             <input type="number" />
           </div>
         </div>
         <div className="separator">-</div>
         <div className="team-2">
-          <div className="flag"></div>
           <div className="input">
             <input type="number" />
           </div>
+          <div className="team-name">
+            <div className="flag"></div>
+            <button>
+              <span>Select team</span>
+            </button>
+          </div>
         </div>
+      </div>
+
+      <div className="download-btn">
+        <button>Generate &amp; Download <FaDownload/> </button>
+        
       </div>
     </>
   );
