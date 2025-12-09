@@ -10,22 +10,26 @@ function ScoreCard() {
       <div className="score-card">
         <div className="team-1">
           <div className="team-name">
-            <div className="flag"></div>
+            <div className="flag">
+
+            </div>
             <button>
               <span>Select team</span>
             </button>
           </div>
           <div className="input">
-            <input type="number" />
+            <input type="number" id="positiveNumberInput" min="1"/>
           </div>
         </div>
         <div className="separator">-</div>
         <div className="team-2">
           <div className="input">
-            <input type="number" />
+            <input type="number" id="positiveNumberInput" min="1"/>
           </div>
           <div className="team-name">
-            <div className="flag"></div>
+            <div className="flag">
+              
+            </div>
             <button>
               <span>Select team</span>
             </button>
