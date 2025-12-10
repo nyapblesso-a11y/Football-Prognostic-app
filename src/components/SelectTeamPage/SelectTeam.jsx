@@ -13,6 +13,13 @@ function SelectTeam() {
               <span>{club.name}</span>
             </li>
           ))}
+
+          {data.countries.map((country, index)=> (
+           <li key ={index} className='teams'>
+            <img src={country.flag} alt="" />
+            <span>{country.country}</span>
+           </li>
+          ))}
         </ul>
       </div>
     </>

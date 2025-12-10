@@ -1,3 +1,5 @@
 body {
-background-image: url(../public/image.avif);
+  background-image: url(../public/image.avif);
+  background-size: cover;
+  background-repeat: no-repeat;
 }

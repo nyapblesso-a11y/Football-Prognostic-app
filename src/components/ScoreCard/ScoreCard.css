@@ -3,13 +3,19 @@
   padding: 0;
   margin: 0;
 }
+
+.score {
+  background-image: url(../public/image.avif);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .header {
   display: flex;
   text-align: center;
   justify-content: center;
   padding: 2rem;
   font-family: "Chokokutai", system-ui;
-  color: #dddddd;
+  color: #dddd;
 }
 .score-card {
   background-color: transparent;
@@ -21,7 +27,7 @@
   justify-content: space-around;
   margin: 0 auto;
   font-family: "Chokokutai", system-ui;
-  max-width: 601px;
+  max-width: 600px;
   text-align: center;
 }
 
@@ -70,19 +76,36 @@ button span {
   border-radius: 50%;
 }
 
-.input input {
-  border: none;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  font-size: 3rem;
-  text-align: center;
+.score-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.input input:hover {
-  transform: scale(1.1);
-  background-color: #dddddd;
-  cursor: pointer;
+.score-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;       
+    height: 80px;       
+    border: none;
+    font-size: 1.5rem;    
+    text-align: center;
+    color: #dddd;
+}
+
+.score-counter button {
+    background-color: #ddd;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .download-btn {
@@ -108,23 +131,25 @@ button span {
 }
 
 @media (max-width: 540px) {
-  
   .flag {
     width: 80px;
     height: 80px;
   }
-
-  .input input {
-    width: 40px;
-    height: 40px;
-  }
 }
 
-@media (max-width: 250px) {
+@media (max-width: 288px) {
   .score-card {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     align-items: center;
     justify-self: center;
+  }
+
+  .team-1, .team-2 {
+    transform: rotate(90deg);
   } 
+
+  .team-name, .score-display {
+    transform: rotate(-90deg);
+  }
 }
