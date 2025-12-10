@@ -141,7 +141,7 @@ button span {
   }
 }
 
-@media (max-width: 288px) {
+@media (max-width: 312px) {
   .score-card {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
