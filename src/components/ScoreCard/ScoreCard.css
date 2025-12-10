@@ -13,7 +13,6 @@
   display: flex;
   text-align: center;
   justify-content: center;
-  padding: 2rem;
   font-family: "Chokokutai", system-ui;
   color: #dddd;
 }
@@ -56,10 +55,11 @@ button {
 
 button span {
   font-size: small;
-  font-family: "Poppins", sans-serif;
+    font-family: "Chokokutai", system-ui;
   font-weight: 600;
   font-style: normal;
   color: white;
+
 }
 
 .separator {
@@ -77,35 +77,39 @@ button span {
 }
 
 .score-counter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .score-display {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;       
-    height: 80px;       
-    border: none;
-    font-size: 1.5rem;    
-    text-align: center;
-    color: #dddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 80px;
+  border: none;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #dddd;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .score-counter button {
-    background-color: #ddd;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: #ddd;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .download-btn {
@@ -145,11 +149,13 @@ button span {
     justify-self: center;
   }
 
-  .team-1, .team-2 {
+  .team-1,
+  .team-2 {
     transform: rotate(90deg);
-  } 
+  }
 
-  .team-name, .score-display {
+  .team-name,
+  .score-display {
     transform: rotate(-90deg);
   }
 }
