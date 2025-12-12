@@ -2,8 +2,9 @@ import React, { createRef, useRef, useState } from "react";
 import "./ScoreCard.css";
 import html2canvas from "html2canvas";
 import { FaDownload, FaPlus, FaMinus } from "react-icons/fa";
+import Team from "../Team/Team";
 
-function ScoreCard() {
+function ScoreCard({homeTeam, awayTeam}) {
   const [scoreTeam1, setScoreTeam1] = useState(0);
   const [scoreTeam2, setScoreTeam2] = useState(0);
   const ScoreCardRef = useRef(null);
@@ -42,12 +43,7 @@ function ScoreCard() {
         </div>
         <div className="score-card">
           <div className="team-1">
-            <div className="team-name">
-              <div className="flag"></div>
-              <button>
-                <span>Select team 1</span>
-              </button>
-            </div>
+            <Team team={homeTeam} />
             <div className="score-counter">
               <button onClick={decrementScore1}>
                 <FaMinus />
@@ -70,12 +66,7 @@ function ScoreCard() {
                 <FaPlus />
               </button>
             </div>
-            <div className="team-name">
-              <div className="flag"></div>
-              <button>
-                <span>Select team 2</span>
-              </button>
-            </div>
+            <Team team={awayTeam} />
           </div>
         </div>
       </div>
