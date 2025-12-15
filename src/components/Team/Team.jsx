@@ -11,7 +11,7 @@ function Team({team, onClick}) {
             <span>{team.name}</span>
         </div>
       ):(
-        <span>Select team</span>
+        <p>Select team</p>
       )} 
     
       </div>
