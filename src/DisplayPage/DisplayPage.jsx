@@ -6,8 +6,14 @@ import SelectTeam from "../components/SelectTeamPage/SelectTeam";
 function DisplayPage() {
   const [showSelector, setShowSelector] = useState(false);
   const [selecting, setSelecting] = useState("home");
-  const [home, setHome] = useState(null);
-  const [away, setAway] = useState(null);
+  const [home, setHome] = useState(() => {
+    const saved = localStorage.getItem("homeTeam");
+    return saved ? JSON.parse(saved) : null;
+  });
+  const [away, setAway] = useState(() => {
+    const saved = localStorage.getItem("awayTeam");
+    return saved ? JSON.parse(saved) : null;
+  });
   return (
     <>
       <ScoreCard

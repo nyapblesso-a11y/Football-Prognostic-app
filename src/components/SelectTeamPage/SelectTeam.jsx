@@ -9,8 +9,16 @@ function SelectTeam({
   selecting,
 }) {
   const pickTeam = (team) => {
+    if (selecting === "home") {
+      setHome(team);
+      localStorage.setItem("homeTeam", JSON.stringify(team));
+    } else {
+      setAway(team);
+      localStorage.setItem("awayTeam", JSON.stringify(team));
+    }
     selecting === "home" ? setHome(team) : setAway(team);
     setShowSelector(false);
+
   };
   return (
     <>
@@ -21,12 +29,12 @@ function SelectTeam({
             {data.clubs.map((club, index) => (
               <li key={index} className="teams">
                 <div onClick={() => pickTeam(club)}>
-                  <img src={club.url} alt=""  />
+                  <img src={club.url} alt="" />
                   <span>{club.name}</span>
                 </div>
               </li>
             ))}
-{/* 
+            {/* 
             {data.countries.map((country, index) => (
               <li key={index} className="teams">
                 <img src={country.flag} alt="" />
