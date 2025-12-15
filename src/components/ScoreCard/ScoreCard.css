@@ -47,11 +47,10 @@ button {
 
 button span {
   font-size: small;
-    font-family: "Chokokutai", system-ui;
+  font-family: "Chokokutai", system-ui;
   font-weight: 600;
   font-style: normal;
   color: white;
-
 }
 
 .separator {
@@ -101,7 +100,6 @@ button span {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .download-btn {

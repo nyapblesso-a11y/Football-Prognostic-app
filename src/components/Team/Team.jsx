@@ -1,13 +1,19 @@
 import React from "react";
 import '../Team/tean.css'
 
-function Team({team}) {
+function Team({team, onClick}) {
   return (
     <>
-      <div className="team-name">
-        <div className="flag">
-            <img src={team?.flag} alt="" />
+      <div className="team-name" onClick={onClick}>
+        {team ? 
+           ( <div className="teams">
+            <img src={team.url} alt="" />
+            <span>{team.name}</span>
         </div>
+      ):(
+        <span>Select team</span>
+      )} 
+    
       </div>
     </>
   );

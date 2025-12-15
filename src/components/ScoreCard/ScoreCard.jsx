@@ -4,9 +4,17 @@ import html2canvas from "html2canvas";
 import { FaDownload, FaPlus, FaMinus } from "react-icons/fa";
 import Team from "../Team/Team";
 
-function ScoreCard({homeTeam, awayTeam}) {
+function ScoreCard({
+  home,
+  away,
+  showSelector,
+  setShowSelector,
+  selecting,
+  setSelecting,
+}) {
   const [scoreTeam1, setScoreTeam1] = useState(0);
   const [scoreTeam2, setScoreTeam2] = useState(0);
+
   const ScoreCardRef = useRef(null);
 
   const incrementScore1 = () => setScoreTeam1((prev) => prev + 1);
@@ -43,7 +51,13 @@ function ScoreCard({homeTeam, awayTeam}) {
         </div>
         <div className="score-card">
           <div className="team-1">
-            <Team team={homeTeam} />
+            <Team
+              team={home}
+              onClick={() => {
+                setSelecting("home");
+                setShowSelector(true);
+              }}
+            />
             <div className="score-counter">
               <button onClick={decrementScore1}>
                 <FaMinus />
@@ -54,7 +68,6 @@ function ScoreCard({homeTeam, awayTeam}) {
               </button>
             </div>
           </div>
-
           <div className="separator">-</div>
           <div className="team-2">
             <div className="score-counter">
@@ -66,7 +79,13 @@ function ScoreCard({homeTeam, awayTeam}) {
                 <FaPlus />
               </button>
             </div>
-            <Team team={awayTeam} />
+            <Team
+              team={away}
+              onClick={() => {
+                setSelecting("away");
+                setShowSelector(true);
+              }}
+            />
           </div>
         </div>
       </div>
