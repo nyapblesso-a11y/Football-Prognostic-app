@@ -23,25 +23,16 @@ function ScoreCard({
   const decrementScore2 = () => setScoreTeam2((prev) => Math.max(0, prev - 1));
 
   const handleDownload = async () => {
-    const element = ScoreCardRef.current;
-    if (!element) return;
-    try {
-      const canvas = await html2canvas(element, { scale: 2 });
-      const imageDataURL = canvas.toDataURL("image/png");
-      triggerDownload(imageDataURL, "Predicted-score.png");
-    } catch (error) {
-      console.error("Error generating image:", error);
-    }
-  };
-
-  const triggerDownload = (dataURL, filename) => {
+    const html2canvas = (await import("html2canvas")).default;
+    const canvas = await html2canvas(ScoreCardRef.current, {
+      useCORS: true,
+      allowTaint: false,
+      backgroundColor: null,
+    });
     const link = document.createElement("a");
-    link.href = dataURL;
-    link.download = filename;
-
-    document.body.appendChild(link);
+    link.download = "match-score.png";
+    link.href = canvas.toDataURL();
     link.click();
-    document.body.removeChild(link);
   };
   return (
     <>
