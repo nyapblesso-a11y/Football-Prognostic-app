@@ -1,0 +1,52 @@
+import React, { useState } from "react";
+import data from "../../data.json";
+import "./SelecTeamPage.css";
+function SelectTeam({
+  setHome,
+  setAway,
+  showSelector,
+  setShowSelector,
+  selecting,
+}) {
+  const pickTeam = (team) => {
+    if (selecting === "home") {
+      setHome(team);
+      localStorage.setItem("homeTeam", JSON.stringify(team));
+    } else {
+      setAway(team);
+      localStorage.setItem("awayTeam", JSON.stringify(team));
+    }
+    selecting === "home" ? setHome(team) : setAway(team);
+    setShowSelector(false);
+
+  };
+  return (
+    <>
+      {showSelector && (
+        <div className="select-section">
+          <h1>Various teams</h1>
+          <ul className="card">
+            {data.clubs.map((club, index) => (
+              <li key={index} className="teams">
+                <div onClick={() => pickTeam(club)}>
+                  <img src={club.url} alt="" />
+                  <span>{club.name}</span>
+                </div>
+              </li>
+            ))}
+            {/* 
+            {data.countries.map((country, index) => (
+              <li key={index} className="teams">
+                <img src={country.flag} alt="" />
+                <span>{country.country}</span>
+              </li>
+            ))} */}
+          </ul>
+        </div>
+      )}
+    </>
+  );
+}
+console.log(data);
+
+export default SelectTeam;
